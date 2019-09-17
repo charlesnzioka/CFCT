@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/home_dest">
+
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.elektra.cfct.ui.main.SponsorsFragment"
+        android:label="Available Sponsors"
+        tools:layout="@layout/fragment_main">
+        <action android:id="@+id/action_choose_storage_location"
+            app:destination="@id/childrenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/childrenFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/childrenFragment"
+        android:name="com.elektra.cfct.ui.main.ChildrenFragment"
+        android:label=""
+        tools:layout="@layout/fragment_children" >
+        <argument
+            android:name="sponsor_name"
+            app:argType="string" />
+        <argument
+            android:name="sponsor_id"
+            app:argType="string" />
+    </fragment>
+</navigation>
