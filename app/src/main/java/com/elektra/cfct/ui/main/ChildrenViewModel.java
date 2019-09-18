@@ -48,6 +48,7 @@ public class ChildrenViewModel extends ViewModel {
     public void addChild(String fName, String lName){
         Child child = new Child(fName,lName,9,"Male", sponsorId);
         childRepository.addChild(child);
+        children.getValue().data.add(child);
     }
 
     public LiveData<Resource<List<Child>>> observeChildren(){
